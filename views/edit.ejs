@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Edit | <%= id %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body class="bg-black/90 py-14">
+        <!-- Add Task Form -->
+        <form
+            class="max-w-[80vw] mx-auto"
+            action="/edit-note/<%= id %>"
+            method="post"
+        >
+            <input
+                required
+                value="<%= title %>"
+                name="title"
+                type="text"
+                placeholder="Enter note title here..."
+                class="w-full bg-gray-800 px-3 py-2 text-lg rounded-md text-white"
+            />
+            <textarea
+                required
+                name="description"
+                class="w-full bg-gray-800 px-3 py-2 text-lg rounded-md mt-4 text-white"
+                placeholder="Enter notes details here...."
+                rows="6"
+            >
+<%= description %></textarea
+            >
+            <button
+                type="submit"
+                class="w-full bg-blue-700 px-3 py-2 rounded-md mt-2 text-white font-semibold"
+            >
+                Update Note
+            </button>
+        </form>
+    </body>
+</html>

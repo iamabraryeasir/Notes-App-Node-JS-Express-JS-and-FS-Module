@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Note | <%= id %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body class="bg-black/90 py-14 text-white">
+        <div
+            class="max-w-[80vw] mx-auto bg-gray-800 rounded-md px-5 py-3 min-h-44"
+        >
+            <h2 class="font-semibold text-3xl"><%= title %></h2>
+
+            <div class="w-full h-0.5 bg-white/60 mt-3 mb-6 rounded-full"></div>
+
+            <% description.forEach((desc) => { %>
+            <p class="mt-1 block"><%= desc %></p>
+            <% }) %>
+        </div>
+        <div
+            class="mt-5 max-w-[80vw] mx-auto grid grid-cols-3 gap-4 text-center text-lg font-medium"
+        >
+            <a href="/" class="px-4 py-2.5 rounded-md bg-blue-600">Go Back</a>
+            <a
+                href="/edit-note/<%= id %>"
+                class="px-4 py-2.5 rounded-md bg-green-600"
+                >Edit</a
+            >
+            <a
+                href="/delete-note/<%= id %>"
+                class="px-4 py-2.5 rounded-md bg-red-600"
+                >Delete</a
+            >
+        </div>
+    </body>
+</html>
